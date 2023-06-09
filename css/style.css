@@ -122,27 +122,24 @@ hr {
     margin-top: 1rem;
 }
 
-.cta {
+.products-link {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 21px;
+    margin: 2.5rem auto 0;
+    width: 200px;
+    border-radius: 2px;
+    padding: .8rem 0;
     background: url("../images/halftone.png");
-    font-size: 20px;
-    width: 160px;
-    margin: 1rem auto 0;
-    padding: .8rem 1.5rem;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.cta:hover {
-    cursor: pointer;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .categories {
     display: flex;
     gap: 1rem;
     padding: 0 1rem;
-    margin: 5rem auto;
+    margin: 2.5rem auto 5rem;
 }
 
 .category {
@@ -184,6 +181,12 @@ hr {
     color: var(--accent-color);
     padding: 1rem;
     margin: 0 0 1rem;
+    text-align: center;
+}
+
+.product-header_text p {
+    max-width: 500px;
+    margin: auto;
 }
 
 .sub-heading {
