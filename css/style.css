@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Source Sans";
+    src: url("../fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
 :root {
     --primary-blue: #CCD1E5;
     --primary-color: #EFDFDF;
@@ -20,22 +35,28 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Source Sans", sans-serif;
     background: url("../images/pink_rice.png");
     color: var(--accent-color);
+    overflow-x: hidden;
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
     flex: 1 0 auto;
+    padding-bottom: 5rem;
+    background-color: white;
 }
 
 footer {
     flex-shrink: 0;
-    background-color: var(--secondary-color);
-    margin-top: 5rem;
+    background-color: white;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
     height: 30px;
     text-align: center;
 }
@@ -53,7 +74,10 @@ a {
 nav {
     display: flex;
     justify-content: end;
-    margin-top: 1rem;
+    padding: .6rem 0;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 nav a {
@@ -65,8 +89,9 @@ nav a:hover {
 }
 
 h1, h2, h3 {
-    font-weight: 100;
+    font-weight: 200;
     margin: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 h1 {
@@ -122,6 +147,10 @@ hr {
     margin-top: 1rem;
 }
 
+.cta-button {
+    font-family: "Raleway", sans-serif;
+}
+
 .products-link {
     display: flex;
     justify-content: center;
@@ -129,22 +158,29 @@ hr {
     font-size: 21px;
     margin: 2.5rem auto 0;
     width: 200px;
+    border: 1px solid var(--primary-color);
     border-radius: 2px;
     padding: .8rem 0;
-    background: url("../images/halftone.png");
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.products-link:hover {
+    border: 1px solid var(--accent-color);
 }
 
 .categories {
     display: flex;
     gap: 1rem;
     padding: 0 1rem;
-    margin: 2.5rem auto 5rem;
+    max-width: 1200px;
+    margin: 3rem auto 3rem;
 }
 
 .category {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     text-align: center;
 }
 
@@ -164,33 +200,44 @@ hr {
 
 .product-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    position: relative;
 }
 
 .product-header img {
-    width: 100%;
-    height: 620px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 350px;
+    width: 35%;
     object-fit: cover;
     object-position: 100% 55%;
-
     filter: sepia(33%) saturate(80%);
 }
 
-.product-header_text{
-    background-color: var(--secondary-color);
-    color: var(--accent-color);
-    padding: 1rem;
-    margin: 0 0 1rem;
-    text-align: center;
+.product-header_img {
+    height: 350px;
 }
 
-.product-header_text p {
-    max-width: 500px;
-    margin: auto;
+.product-header_text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 350px;
+    width: 100%;
+    background: linear-gradient(to right, var(--secondary-color) 65%, transparent);
+    color: var(--accent-color);
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
 }
 
 .sub-heading {
-    font-size: 22px;
+    font-size: 21px;
+    font-weight: 300;
+    max-width: 400px;
 }
 
 .product-container {
@@ -207,6 +254,8 @@ hr {
     background-color: white;
     border-radius: 2px;
     padding: 1rem;
+    margin-top: 3rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .product-details {
@@ -261,17 +310,51 @@ hr {
 
 /* ------ Media queries ------ */
 
+@media (max-width: 1200px) {
+    main {
+        background: url("../images/pink_rice.png");
+    }
+
+    .text-content {
+        background-color: white;
+        padding: 6rem 2rem;
+    }
+
+    .text-content h2 {
+        text-align: center;
+    }
+}
+
 @media (max-width: 680px) {
     h2 {
         font-size: 3rem;
     }
 
     .text-content {
-        margin: 4rem 2rem;
+        margin: 4rem 0;
     }
 
     .categories {
         flex-direction: column;
+    }
+
+    .product-header {
+        flex-direction: column;
+    }
+
+    .product-header_text {
+        background-color: var(--secondary-color);
+        height: 250px;
+    }
+
+    .product-header img {
+        width: 100%;
+    }
+
+    .product-header_text,
+    .product-header_img {
+        position: relative;
+        width: 100%;
     }
 }
 
