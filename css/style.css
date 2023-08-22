@@ -74,6 +74,7 @@ a {
     font-size: 18px;
     color: var(--accent-color);
     text-decoration: none;
+    font-family: "Accent";
 }
 
 header {
@@ -325,6 +326,11 @@ hr {
     background-color: var(--secondary-color);
 }
 
+.quote cite {
+    font-family: "Accent";
+    font-style: normal;
+}
+
 blockquote {
     font-size: 18px;
     text-indent: -0.7em;
@@ -414,6 +420,7 @@ q::before, q::after {
 
 .product-price {
     font-size: 1.25rem;
+    font-family: "Accent";
 }
 
 .product-buttons {
