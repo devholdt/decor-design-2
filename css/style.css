@@ -104,6 +104,7 @@ header {
 .logo p {
     font-family: "Heading";
     font-size: 3rem;
+    font-weight: 500;
     margin-top: .6rem;
 }
 
@@ -219,7 +220,7 @@ hr {
 }
 
 .heading-style {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .text-container {
